@@ -1,0 +1,23 @@
+﻿@{
+    //ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Top 5 Restaurants";
+}
+
+
+<!--links to the model, so that we can access it in this html page-->
+@model IEnumerable<string>
+
+<div class="text-center">
+    <p>According to Hailey Hullinger, these are the Top 5 Restaurants in the Provo, Utah area.</p>
+</div>
+
+<!--will list each of the top 5 restaurants that are prepopulated into the "Top5" model, bootstrap stylin to list in a group-->
+<div class="list-group">
+    <ul>
+        <!--to loop through each of the items found in the Model -->
+        @foreach (string r in Model)
+        {
+            <li class="list-group-item">@r</li>
+        }
+    </ul>
+</div>

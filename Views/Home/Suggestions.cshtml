@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Input your restaurant suggestions here";
+}
+
+@model Restaurants.Models.Suggestions
+
+<h4 class="text-center">Enter your restaurant suggestions!</h4>
+
+<!--form for entering restaurant suggestions-->
+<!--applies bootstrap styling class to have a boarder and center it-->
+<div class="border">
+    <form asp-action="Suggestions" method="post" class="text-center">
+        <!--input for Person submitting name-->
+        <div>
+            <label>Your Name: </label>
+            <input asp-for="SuggestionName" />
+        </div>
+        <br />
+
+        <!--input for Restaurant Name-->
+        <div>
+            <label>Restaurant Name: </label>
+            <input asp-for="RestaurantName" />
+        </div>
+        <br />
+
+        <!--input for fav dish-->
+        <div>
+            <label>Favorite Dish: </label>
+            <input asp-for="FavDish" />
+        </div>
+        <br />
+
+        <!--input for restaurant phone number, should validate-->
+        <div>
+            <label>Restaurant Phone Number: </label>
+            <input asp-for="PhoneNumber" />
+
+        </div>
+        <br />
+
+        <!--button to submit the form-->
+        <button type="submit" class="btn btn-warning">Submit Suggestion</button>
+
+
+        <!--validation summary if required fields are not entered or if the phone number is not entered correctly-->
+        <div asp-validation-summary="All"></div>
+
+    </form>
+</div>

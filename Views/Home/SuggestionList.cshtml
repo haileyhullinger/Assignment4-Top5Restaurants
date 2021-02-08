@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Restaurant Suggestions Submitted by Users";
+}
+
+@model IEnumerable<Restaurants.Models.Suggestions>
+
+<br />
+<!--table to display all of the suggested restaurant information, bootstrap styling to boarder the table to make it more readable-->
+<table class="table-bordered">
+    <thead>
+        <tr><th>Suggestor's Name   </th><th>Restaurant Name   </th><th>Favorite Dish   </th><th>Phone Number   </th></tr>
+    </thead>
+
+    <tbody>
+        <!--for loop to go through and list all the movies in the model-->
+        @foreach (Restaurants.Models.Suggestions x in Model)
+        {
+ 
+                <tr>
+                    <td>@x.SuggestionName   </td>
+                    <td>@x.RestaurantName   </td>
+                    <td>@x.FavDish   </td>
+                    <td>@x.PhoneNumber   </td>
+                </tr>
+
+        }
+
+
+
+
+    </tbody>
+</table>
